@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_grid/gridscreen.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,7 +12,8 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Material App Bar'),
         ),
-        body: _buildGameBody(),
+        body: TestGrid(), 
+        //_buildGameBody(),
       ),
     );
   }
