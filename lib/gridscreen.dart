@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:test_grid/receptor.dart';
+
 
 class TestGrid extends StatefulWidget {
   TestGrid({Key? key}) : super(key: key);
@@ -74,9 +76,12 @@ Widget _buildGameBody() {
 
   @override
   Widget build(BuildContext context) {
+    int indexer = optionSelect;
     return Scaffold(
       appBar: AppBar(title: Text("Game Body")),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
     children: <Widget>[
     AspectRatio(
       aspectRatio: 1.0,
@@ -97,18 +102,21 @@ Widget _buildGameBody() {
     ),
     InkWell(
       onTap: (){
-        print("Guardar");
+        print("Guardar posicion #$indexer");
+        Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
+          return Receptor(indexer);
+        }));
       },
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.green,
+          color: const Color(0xFF024404),
           borderRadius: BorderRadius.circular(20)
         ),
         margin: const EdgeInsets.only(top: 20),
-        height: 40, width: 120,
+        height: 50, width: 150,
         child: const Center(
           child: Text("Save", style: TextStyle(
-          fontWeight: FontWeight.bold, fontSize: 20
+          fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white
         ),)),
       ),
     )

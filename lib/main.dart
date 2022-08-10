@@ -9,9 +9,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Material App',
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Material App Bar'),
-        ),
         body: TestGrid(), 
         //_buildGameBody(),
       ),
